@@ -13,7 +13,8 @@
 import H from '../parts/Globals.js';
 
 import U from '../parts/Utilities.js';
-var arrayMax = U.arrayMax,
+var animObject = U.animObject,
+    arrayMax = U.arrayMax,
     arrayMin = U.arrayMin,
     extend = U.extend,
     isArray = U.isArray;
@@ -238,7 +239,7 @@ seriesType(
                 attr.translateX = series.yAxis.pos;
                 series.group.animate(
                     attr,
-                    extend(H.animObject(series.options.animation), {
+                    extend(animObject(series.options.animation), {
                         step: function (val, fx) {
                             series.group.attr({
                                 scaleX: Math.max(0.001, fx.pos)
